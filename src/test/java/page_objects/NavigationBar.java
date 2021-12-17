@@ -7,19 +7,24 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class NavigationBar {
+    private final By MortgageCalculatorLogo = By.xpath("//a/img[@alt='Logo']");
     private final By RatesLink = By.linkText("Rates");
     private final By RealAPRLink = By.linkText("Real APR");
-    private final By MortgageCalculatorLogo = By.xpath("//a/img[@alt='Logo']");
+
 
     private static final Logger LOGGER = LogManager.getLogger(NavigationBar.class);
 
     public WebDriver driver;
 
     public NavigationBar(WebDriver driver) {
+
         this.driver = driver;
     }
 
-//    Mouse hover to Rates, page doesn't change, so same return class
+    public NavigationBar() {
+    }
+
+    //    Mouse hover to Rates, page doesn't change, so same return class
     public NavigationBar mouseHoverToRates() {
         LOGGER.debug("Mouse hover to Rates Link text");
         ActOn.elements(driver, RatesLink).mouseHover();

@@ -17,7 +17,7 @@ public class Home extends NavigationBar {
     private final By StartMonthDropDown = By.name("param[start_month]");
     private final By StartYearInputField = By.id("start_year");
     private final By PropertyTaxInputField = By.id("pptytax");
-    private final By PMIInputFiled = By.id("pmi");
+    private final By PMIInputField = By.id("pmi");
     private final By HOIInputField = By.id("hoi");
     private final By HOAInputField = By.id("hoa");
     private final By LoanTypeDropDown = By.name("param[milserve]");
@@ -88,7 +88,7 @@ public class Home extends NavigationBar {
 
    public Home typePMIRate(String value) {
         LOGGER.debug("Typing PMI Rate: " + value);
-       ActOn.elements(driver, PMIInputFiled).setValue(value);
+       ActOn.elements(driver, PMIInputField).setValue(value);
        return this;
    }
 

@@ -55,6 +55,7 @@ public class ElementActions {
     }
 
     public String getTextValue() {
+
         return getElement().getText();
     }
 }

@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/Features",
         glue = {"step_definitions"},
         plugin = {"pretty", "summary", "json:target/cucumber.json"}
-// Based on report we need, we can add either html or json mentioned above "html:target/CucumberReports/report.html"
+       // Based on report we need, we can add either html or json mentioned above "html:target/CucumberReports/report.html"
 )
 
 public class TestRunner {

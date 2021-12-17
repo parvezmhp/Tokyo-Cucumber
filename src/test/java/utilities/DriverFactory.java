@@ -13,7 +13,6 @@ import java.net.URL;
 
 
 public class DriverFactory {
-    URL gridUrl;
 
 //    It will not allow to create an object outside from the class
     private DriverFactory() {

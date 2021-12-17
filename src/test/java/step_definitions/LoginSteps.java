@@ -39,13 +39,13 @@ public class LoginSteps {
         LOGGER.info("User has entered credentials");
     }
 
-    @And("^click on login button$")
+    @And("^user clicks on login button$")
     public void clickOnLogin() {
         ActOn.elements(driver, Login).click();
         LOGGER.info("User clicked on Login button");
     }
 
-    @When("^user click on login button upon entering credentials")
+    @When("^user clicks on login button upon entering credentials")
     public void userClickOnLoginUponEnteringCredentials(DataTable table) {
         List<Map<String, String>> data = table.asMaps(String.class, String.class);
         for (Map<String, String> cells: data) {

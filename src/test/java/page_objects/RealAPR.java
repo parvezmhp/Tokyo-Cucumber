@@ -14,14 +14,14 @@ public class RealAPR extends NavigationBar {
     private final By DownPaymentInputField = By.name("DownPayment");
     private final By InterestRateInputField = By.name("Interest");
     private final By CalculateRateButton = By.name("calculate");
-    private final By ActualAPRRate = By.xpath("//*[@id='analysisDiv']/table[1]/tbody/tr[6]/td[1]/strong");
+    private final By ActualAPRRate = By.xpath("//*[@id='analysisDiv']/table[1]/tbody/tr/td/strong[text()='Actual APR:']/../../td[2]/strong");
 
     private static final Logger LOGGER = LogManager.getLogger(RealAPR.class);
 
     public WebDriver driver;
 
     public RealAPR(WebDriver driver) {
-        super(driver);
+        this.driver = driver;
     }
 
     public RealAPR waitForPageToLoad() {
@@ -53,16 +53,16 @@ public class RealAPR extends NavigationBar {
         return this;
     }
 
-    public RealAPR clickOnTheCalculateButton() {
+    public RealAPR ClickingOnCalculateButton() {
         LOGGER.debug("Clicking on the calculate button");
         ActOn.elements(driver, CalculateRateButton).click();
         return this;
     }
 
-    public RealAPR validateActualRealAPR(String expectedAPRrate) {
-        LOGGER.debug("Validate APR rate is: " + expectedAPRrate);
-        String actualReaAPRrate = ActOn.elements(driver, ActualAPRRate).getTextValue();
-        Assert.assertEquals(expectedAPRrate, actualReaAPRrate);
+    public RealAPR validateActualRealAPR(String expectedAprRate) {
+        LOGGER.debug("Validate APR rate is: " + expectedAprRate);
+        String actualRealAprRate = ActOn.elements(driver, ActualAPRRate).getTextValue();
+        Assert.assertEquals(expectedAprRate, actualRealAprRate);
         return this;
     }
 }

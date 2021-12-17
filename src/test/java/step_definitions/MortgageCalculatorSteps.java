@@ -20,7 +20,7 @@ public class MortgageCalculatorSteps {
     private static final Logger LOGGER = LogManager.getLogger(MortgageCalculatorSteps.class);
     WebDriver driver = Hooks.driver;
 
-    @Given("^user is in mortgage calculator home page$")
+    @Given("^user is in mortgage calculator homepage$")
     public void navigateToMortgageCalculatorHomePage() {
         ActOn.browser(driver).openBrowser(ReadConfigFiles.getPropertyValues("MortgageURL"));
         LOGGER.info("Landed on the Mortgage Calculator Home Page");
@@ -43,13 +43,13 @@ public class MortgageCalculatorSteps {
                     .clickOnDownPaymentInDollar()
                     .typeDownPayment(cells.get("DownPayment"))
                     .typeInterestRate(cells.get("InterestRate"))
-                    .clickOnTheCalculateButton();
+                    .ClickingOnCalculateButton();
             LOGGER.info("Entering data to calculate Real APR");
         }
     }
 
-    @Then("^the Real APR is \"(.+?)\"$")
-    public void the_real_apr_is(String realApr) {
+   @Then("^the Real APR is \"(.+?)\"$")
+    public void validateRealAPR(String realApr) {
         new RealAPR(driver)
                 .validateActualRealAPR(realApr);
         LOGGER.info("Validating the Real APR");
